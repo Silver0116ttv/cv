@@ -1,0 +1,328 @@
+	%Para hacer informe con portada utilizamos report
+	
+\documentclass[12pt]{report}
+
+\usepackage[a4paper]{geometry}
+\usepackage[myheadings]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage{ragged2e}
+\bibliography{referencias}
+
+
+%Paquete para hipervinculos
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+%Para qué los subtítulos aparezcan en español
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{sectsty}
+\usepackage{url, lipsum}
+\usepackage{tabularx}
+\usepackage{float}
+
+%--------------------------------------------------
+%Para agregar citas en apa
+%Para citar se usa el comando \cite{}
+%Las referencias se modifican en el archivo sample.bib
+\usepackage{apacite}
+%----------------------------------------------
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+%-------------------------------------------------------------------------------
+%Encabezado y pie de pagina y numeracion
+%\fancyhead para encabezado
+%\fancyfoot para pie de pagina
+% L para izquierda, left
+% R para derecha, right
+% C para centro, center
+%-------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{15pt}
+\fancyhead[L]{} 
+\fancyhead[R]{Centro Universitario de la Costa}
+\fancyfoot[R]{\thepage}
+
+\begin{document}
+
+
+%-------------------------------------------------------------------------------
+% Portada
+%-------------------------------------------------------------------------------
+\title{ \normalsize Centro Universitario de la Costa \\
+		Seminario de solución de problemas de base de datos 				108021\\
+		Catalina Luna Ortega\\
+		Ingenier\'ia en Computacion 2022B 
+		\\ [2.0cm]
+		
+		\LARGE \textbf{Página Web Fitness} 
+		\\ [0.5cm]
+		\normalsize \today \vspace*{5\baselineskip}\\
+		Puerto Vallarta, Jal.}
+
+\date{}
+
+\author{
+		Daniel Moreno Alsar (221404284)\\ 
+		daniel.moreno0428@alumnos.udg.mx\\
+		Jorge Beltran Lopez (221350842)\\ 
+		jorge.beltran5084@alumnos.udg.mx\\}
+%se debe incluir el comando \maketitle para hacer 
+\maketitle
+
+%Para hacer el indice solo es necesario agregar 
+\tableofcontents
+\listoffigures
+
+
+\newpage
+
+
+%-------------------------------------------------------------------------------
+% Section title formatting
+%\sectionfont{\scshape}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% BODY
+%-------------------------------------------------------------------------------
+
+\addcontentsline{toc}{chapter}{Introducción}
+\chapter*{Introducción}
+
+\section*{}
+En el curso ya se ha realizando un progreso en la creaci\'on de base de datos d\'onde se cre\'o  Tescuelas la cual se trabajar\'a con muchos comandos para interactuar con ella, borrar, insertar, editar, etc. datos con el prop\'osito de administrar \'esta misma.
+
+
+
+%--------------------------------TABLAS-------------
+%Insertar tabla
+% Las tablas se pueden genederar a través de:
+% www.tablegenerator.com
+%---------------------------------------------------
+
+\newpage
+
+\addcontentsline{toc}{chapter}{Avance 1}
+\chapter*{Avance 1}
+\addcontentsline{toc}{section}{Evidencias}
+\section*{Evidencias}
+\addcontentsline{toc}{subsection}{Entidad d\'ebil}
+\subsection*{problemática}
+El problema a resolver es la falta de dinero a invertir en una estancia física para empezar. La página web pretende resolver esa problemática.
+\par
+
+
+\addcontentsline{toc}{subsection}{Desarrollo}
+\subsection*{Desarrollo}
+Durante este proyecto nos apoyaremos de las herramientas más enfocadas a la web. Primero se creará la base de datos desde My SQL  workbench ya que se tiene experiencia con dicho programa y no ha presentado ningún problema hasta la fecha y casi todo funciona con el gestor MySQL por si en un futuro se quiere llegar a modificar algo dentro de la base de datos.\\
+
+Se harán varias entrevistas a lo largo del proyecto para tener una retroalinetación constante de lo que el cliente pide ya que se quiere llegar a lo más cercano a la idea del cliente.\\
+
+Se trabajara Con html, con CSS, Frameworks, javascript y php para la gestion con la base de datos. para toda la front-end de la página y parte de la back-end.
+
+
+\addcontentsline{toc}{subsection}{Entrevista con el Cliente}
+\subsection*{Entrevista con el cliente}
+Se le hizo la entrevista a la persona Gala Moreno Alsar, donde se le preguntaron las siguientes preguntas.
+	\begin{enumerate}
+	\item ¿En qué productos estará enfocada tu empresa?
+	\item ¿Qué público está enfocado su compañía/producto?
+	\item ¿Cuenta con alguna política su venta, costo, envío,
+	 cobro pagina, metodo de pago?
+	\item ¿Cuál es la idea general de la página web?¿diseño,
+	 logotipo, colores?
+	\item ¿Tendrá nuevos productos en un futuro?
+	\item ¿Cual es el alcanze que tiene, local, regional...?
+	
+	\end{enumerate}
+	
+	Dentro de la entrevista se realizaron las preguntas que ya están escritas, la persona entrevistada tiene planeado crear una marca que va a tener como producto principal cremas de cacahuates de diferentes sabores y texturas, los productos que se venderán en la tienda en linea serán para todo público no alérgico al cacahuate y para todas las edades. \\
+	El objetivo principal es vender éste producto 100\% natural y para ello se desarrollará un punto de venta virtual (un E-commerce), es decir una página web dónde se aceptaran diferentes métodos de pago comenzando con tarjeta de débito o crédito, también con paypal.\\
+	Dentro de la página se quiere mostrarán varios puntos importantes que describan a la empresa contestando las preguntas "¿Quiénes Sómos?","¿Qué hacemos?". También en cada producto se le hará una breve descripción\\
+	Para el diseño visual de la página web la entrevistada tomó a consideración los siguientes colores, beige, café, verde, amarillo y blanco, Se tomarán tres colores y con esos se trabajarn para la página web, el logo y los productos sí dispondrán de más colores pero el diseño solo llevará tres. Si el negocio tiene éxito en un futuro se planear implementar nuevos productos relacionados como más variedad de sabores, empezar con crema de almendra, avellana y nuez con Alcance nacional. (envios a todo el pais) .\par
+	
+	
+	
+	\addcontentsline{toc}{section}{Ingeniería de requerimientos}
+	\section*{Ingeniería de requerimientos}
+	\addcontentsline{toc}{subsection}{Especificación de hardware/Software Admin}
+	\subsection*{Espesificación de Hardware/Software Admin}
+	Dentro de los requisitos como desarrollador será mecesario utilizar el siguiente hardware para trabajar si ningún problema
+	 
+	\begin{itemize}
+		\item 512 Mb de memoria Ram.
+		\item 1024 Mb maquina virtual.
+		\item 1 GB de espacio de disco duro.
+		\item Sistema operativo:Windows,Linux y Unix.
+		\item Arquitectura del sistema 32/64 bit.
+		\item Protocolo de red TCP/IP.
+	\end{itemize}	
+	
+	\addcontentsline{toc}{subsection}{Especificación de hardware/Software Cliente}
+	\subsection*{Espesificación de Hardware/Software Cliente}
+	\begin{itemize}
+		\item Windows 10 o una versión posterior.
+		\item Windows Server 2016 o versiones posteriores.
+		\item Un procesador Intel Pentium 4 o superior compatible con SSE3.
+		
+	\end{itemize}	
+	
+	
+	
+	
+
+
+
+\addcontentsline{toc}{section}{Indentificación de problema o Probemática}
+\section*{Indentificación de problema o Probemática}
+	
+	
+	Uno de los problemas más vistos en pequeñas empresas, que en este caso es una marca nueva de cremas de cacahuates, es la administración, el hacer inventario en libretas o a mano se corre el riesgo de perder la información aparte de que toma más tiempo.
+	Otro problema en el inicio de un negocio es imagen al igual que la credibilidad y confianza que se asegura al tener un sitio web, éste pretende mejorar de manera visual los servicios y la imagen.\\
+	 La disponibilidad del servicio al cliente suele dejar insatisfechos la usuario/cliente.\\
+	Tomando en cuenta lo anterior, este software se prendente tanto agilizar la organización con una base de datos SQL como ahorrar recursos en el comienzo de esta compañía ya que una página web nos ofrece 24 horas de servicio al cliente cubriendo una de las necesidades actuales del usuario. Para ello se desarrollará un software con una interfaz agradable a la vista e intuitiva.\\
+	 No se trabajará en la seguridad de datos privados ya que el negocio todavía no existe, el proyecto estará más enfocado en informar al cliente sobre lo que hace la compañía y cuantos productos tiene en stock. 
+	
+\addcontentsline{toc}{section}{Justificación}
+\section*{Justificación}
+
+	Con este software se resolvará gran parte de del inicio de una empresa pequeña que la imagen, experiencia y administración. Sin esta herramienta el inicio de la empresa ser verá afectada de manera negativa ya que no contará con las ventajas que te ofrece un sitio web E-commerce "Tener una página web, permitirá plasmar todos tu contenido en ella y todo lo que quieras reflejar. El diseño de tu web, le dará a tus futuros clientes una imagen de cómo es la marca. El consumidor comprenderá el mensaje que quieres transmitir y mostrarás una imagen sólida y coherente."\label{Uno} \ref{Uno}
+. El software permitirá vender, mostrar al cliente y administrar (Con permisos de administrador) el producto que se encuentra en stock para ayudar la toma de desiciones, eficacia y rentabilidad del negocio. Garantizando su sostenibilidad a largo plazo. \\
+	Contar con un citio web E-commerce personalizado podemos ofrecer compra 24 horas del día sin importar días festivos o fin de semana. Podrás ofrecer tus productos y servicios en toda el area de covertura.
+	
+	
+\addcontentsline{toc}{section}{Alcance}
+\section*{Alcance}
+	\begin{itemize}
+	\item El software permitirá a los usuarios llevar un control preciso de sus inventarios, incluyendo la gestión de existencias, el seguimiento de pedidos y la generación de informes.
+
+
+	\item El software utilizará una base de datos MySQL para almacenar y recuperar datos.
+
+	\item Crear una interfaz fácil de usar con un diseño intuitivo y una navegación sencilla para la UX.
+	
+	\item Tener las ventajas de ofrecer al usuario las ventas en linea a travez de un E-commerce.
+
+	\end{itemize}
+	
+	
+\addcontentsline{toc}{section}{Limitantes}
+\section*{Limitantes}
+	\begin{itemize}
+	\item El software será solamente para los navegadores, es decir, no se contará con una app para dispositivos móviles.
+
+	\item El software no incluirá características avanzadas de seguridad como autenticación de dos factores o cifrado de datos.
+	
+	\item El plazo para el desarrollo y entrega del software es de 3 meses, por lo que no se podrán incluir características adicionales que impliquen un tiempo adicional de desarrollo.
+
+	\item Esta versión de software se quedará en fase prueba E-commerce. 
+	\end{itemize}
+	
+\addcontentsline{toc}{section}{Objetivo General}
+\section*{Objetivo General}
+	\begin{itemize}
+	\item Proporcionar una solución eficiente para la gestión de inventarios.
+
+	\item Mejorar la eficiencia y el inicio de la empresa.
+
+	\item Brindar una buena experiencia entre interfaz y usuario.
+
+	\item Cumplir con las regulaciones y normas aplicables en cuanto a privacidad de los datos y seguridad de la información.
+	
+	\end{itemize}
+	
+	\addcontentsline{toc}{section}{Objetivo Específico}
+\section*{Objetivo Específico}
+
+	\begin{itemize}
+	\item Desarrollar una interfaz fácil de usar.
+
+	\item Implementar seguridad de la información del usuario.
+
+	\item Probar y depurar software.
+
+	\item Realizar un seguimiento y una evaluación.
+	
+	\end{itemize}
+
+
+
+
+\addcontentsline{toc}{chapter}{Conclusi\'on}
+
+
+
+\addcontentsline{toc}{chapter}{Bibliograf\'ia}
+\chapter*{Bibliograf\'ia}
+
+(7 julio, 2021). Conoce los beneficios de una página web. Formate develop editor. Formate Recuperado de https://www.formate.es/blog/consejos/conoce-los-beneficios-de-una-pagina-web, pag. \pageref{Uno}
+%-------------------------------------------------------------------------------
+% REFERENCIAS
+%-------------------------------------------------------------------------------
+\newpage
+
+\bibliographystyle{apacite}
+\bibliography{sample.bib}
+
+
+\end{document}
+
+%-------------------------------------------------------------------------------
+% SNIPPETS
+%-------------------------------------------------------------------------------
+
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{file_name}
+%	\caption{}
+%	\centering
+%	\label{label:file_name}
+%\end{figure}
+
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{graph}
+%	\caption{Blood pressure ranges and associated level of hypertension (American Heart Association, 2013).}
+%	\centering
+%	\label{label:graph}
+%\end{figure}
+
+%\begin{wrapfigure}{r}{0.30\textwidth}
+%	\vspace{-40pt}
+%	\begin{center}
+%		\includegraphics[width=0.29\textwidth]{file_name}
+%	\end{center}
+%	\vspace{-20pt}
+%	\caption{}
+%	\label{label:file_name}
+%\end{wrapfigure}
+
+%\begin{wrapfigure}{r}{0.45\textwidth}
+%	\begin{center}
+%		\includegraphics[width=0.29\textwidth]{manometer}
+%	\end{center}
+%	\caption{Aneroid sphygmomanometer with stethoscope (Medicalexpo, 2012).}
+%	\label{label:manometer}
+%\end{wrapfigure}
+
+
+
+
+
